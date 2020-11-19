@@ -1,9 +1,9 @@
 .PHONY: all clean get build push
 
-VERSION := 2.0.20200304.0
+VERSION := 2.0.20201111.0
 VAGRANT_USER := <your-vagrant-cloud-user>
 BOX_NAME := amazonlinux2
-BOX_VERSION := 1.0.0
+BOX_VERSION := 2.0.20201111.0
 PROVIDER := vmware_desktop
 ACCESS_TOKEN := <your-vagrant-cloud-token>
 
