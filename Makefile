@@ -28,6 +28,7 @@ build:
 	hdiutil makehybrid -o build/seed.iso -hfs -joliet -iso -default-volume-name cidata seedconfig/
 	/Applications/VMware\ Fusion.app/Contents/Library/VMware\ OVF\ Tool/ovftool amzn2-vmware_esx-$(VERSION)-x86_64.xfs.gpt.ova build/
 	cp vmware_extendedConfigFile.vmx build/amzn2-vmware_esx-$(VERSION)-x86_64.xfs.gpt.vmwarevm/amzn2-vmware_esx-$(VERSION)-x86_64.xfs.gpt.vmx
+	cp metadata.json build/amzn2-vmware_esx-$(VERSION)-x86_64.xfs.gpt.vmwarevm/metadata.json
 	gsed -i "s/^displayname =.*/displayname = \"amzn2-vmware_esx-$(VERSION)-x86_64.xfs.gpt\"/g" build/amzn2-vmware_esx-$(VERSION)-x86_64.xfs.gpt.vmwarevm/amzn2-vmware_esx-$(VERSION)-x86_64.xfs.gpt.vmx
 	gsed -i "s/^scsi0:0\.fileName =.*/scsi0:0\.fileName = \"amzn2-vmware_esx-$(VERSION)-x86_64.xfs.gpt-disk1.vmdk\"/g" build/amzn2-vmware_esx-$(VERSION)-x86_64.xfs.gpt.vmwarevm/amzn2-vmware_esx-$(VERSION)-x86_64.xfs.gpt.vmx
 	gsed -i "s/^extendedConfigFile =.*/extendedConfigFile = \"amzn2-vmware_esx-$(VERSION).gpt.vmxf\"/g" build/amzn2-vmware_esx-$(VERSION)-x86_64.xfs.gpt.vmwarevm/amzn2-vmware_esx-$(VERSION)-x86_64.xfs.gpt.vmx
